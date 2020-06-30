@@ -1,0 +1,18 @@
+.page {
+  background-color: rgb(185, 231, 216);
+}
+.title {
+  margin-left: 20px;
+}
+.enter__number {
+  padding: 20px;
+}
+.information {
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+  padding: 10px;
+}
+input {
+  margin: 5px;
+}

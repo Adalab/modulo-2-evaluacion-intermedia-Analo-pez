@@ -3,19 +3,19 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body class="page">
-<h1 class="title">Adivina el número</h1>
+    <h1 class="title">Adivina el número</h1>
 <section class="game js-game">
-<form>
-    <div class="enter__number">
-        <label for="">Introduce aquí tu número</label>
-        <input class = "js-inputNumber" type="text" name="" id="">
-        <button class="btn js-btn" type="submit">Prueba</button>
-</div>
-    <div class="information">
-    <p class = "js-clue" type="text" placeholder="Pista: escribe el número y dale a prueba"></p>
-    <p class = "js-attemps" type="text" placeholder="Número de intentos"></p>
-</div>
-</form>
+    <form>
+        <div class="enter__number">
+            <label for="">Introduce aquí tu número</label>
+            <input class = "js-inputNumber" type="text" name="" id="number">
+            <input class="btn js-btn" type="submit" value="Prueba">
+        </div>
+        <div class="information">
+            <p> Pista: <span class= "js-clue " > escribe el numero y dale a Prueba</span></p>
+            <p> Número de intentos: <span class = "js-attempts">0 </span> </p>
+        </div>
+    </form>
 </section>
 <script type="text/javascript" src="./main.js"></script>
 </body>

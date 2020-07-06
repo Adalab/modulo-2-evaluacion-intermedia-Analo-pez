@@ -1,37 +1,61 @@
 'use strict';
 
-let input = document.querySelector('.js-inputNumber');
+const boxGame = document.querySelector('.enter__number');
+const input = document.querySelector('.js-inputNumber');
 const button = document.querySelector('.js-btn');
 const textClue = document.querySelector('.js-clue');
-const attemps = document.querySelector('.js-attemps');
-console.log();
+const attempts = document.querySelector('.js-attempts');
+
 
 function getRandomNumber(max) {
-  return Math.ceil(Math.random() * max);
+	return Math.ceil(Math.random() * max);
 }
+
 const number = getRandomNumber(100);
 console.log(number);
 
-// const showText = textClue.innerHTML;
 
-function getANumber(event) {
-  event.preventDefault();
-  let inputValue = input.value;
-  if (inputValue > number) {
-    return console.log(`Demasiado Alto`);
+function getANumber(ev) {
+	ev.preventDefault();
+	updateClue();
+	updateCounter();
+}
 
-    // if (inputValue< number) {
-    // return console.log('Demasiado bajo');
 
-    // //     if (inputValue===number) {
-    // //         return console.log('Has ganado campeona!');
+function updateClue() {
+	const inputValue = parseInt(input.value);
 
-    // //     if (inputValue >100 || input<=0) {
-    // //         return console.log('El número debe estar entre 1 y 100');
-    // //         }
-  }
+	if (inputValue > 100 || inputValue < 1) {
+		textClue.innerHTML = 'El número debe estar entre 1 y 100';
+	}
+	else if (inputValue > number) {
+		textClue.innerHTML = `Demasiado Alto`;
+	}
+	else if (inputValue < number) {
+		textClue.innerHTML = 'Demasiado bajo';
+	}
+	else if (inputValue === number) {
+		textClue.innerHTML = 'Has ganado campeona!';
+		const win = document.querySelector('.information');
+		win.classList.add('colorClue');
+		boxGame.remove();
+	}
+}
+
+// quitar color/ bloquear cuando ganas
+
+
+let counterAttempts = 0;
+
+function updateCounter() {
+	counterAttempts++;
+	attempts.innerHTML = counterAttempts;
 }
 
 button.addEventListener('click', getANumber);
 
-//contador de intentos
+
+
+//CREAR UNA FUNCION PARA NO REPETIR (AUN POR HACER)
+//rehacer array??
+const showText = textClue.innerHTML;

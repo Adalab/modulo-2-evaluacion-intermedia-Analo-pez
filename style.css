@@ -1,18 +1,26 @@
 .page {
-  background-color: rgb(185, 231, 216);
+	background-color: rgb(185, 231, 216);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 .title {
-  margin-left: 20px;
+	margin: 20px;
 }
 .enter__number {
-  padding: 20px;
+	padding: 20px;
 }
 .information {
-  display: flex;
-  flex-direction: column;
-  width: 420px;
-  padding: 10px;
+	border: 2px solid black;
+	display: flex;
+	flex-direction: column;
+	width: 420px;
+	padding: 10px;
 }
 input {
-  margin: 5px;
+	margin: 5px;
+}
+.colorClue {
+	background-color: rgba(54, 247, 79, 0.788);
 }

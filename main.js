@@ -26,23 +26,27 @@ function updateClue() {
 	const inputValue = parseInt(input.value);
 
 	if (inputValue > 100 || inputValue < 1) {
-		textClue.innerHTML = 'El número debe estar entre 1 y 100';
+		showClue('El número debe estar entre 1 y 100');
 	}
 	else if (inputValue > number) {
-		textClue.innerHTML = `Demasiado Alto`;
+		showClue(`Demasiado Alto`);
 	}
 	else if (inputValue < number) {
-		textClue.innerHTML = 'Demasiado bajo';
+		showClue('Demasiado bajo');
 	}
 	else if (inputValue === number) {
-		textClue.innerHTML = 'Has ganado campeona!';
+		showClue('Has ganado campeona!');
 		const win = document.querySelector('.information');
 		win.classList.add('colorClue');
 		boxGame.remove();
 	}
 }
 
-// quitar color/ bloquear cuando ganas
+function showClue(text) {
+	textClue.innerHTML = text;
+}
+
+
 
 
 let counterAttempts = 0;
@@ -56,6 +60,3 @@ button.addEventListener('click', getANumber);
 
 
 
-//CREAR UNA FUNCION PARA NO REPETIR (AUN POR HACER)
-//rehacer array??
-const showText = textClue.innerHTML;
